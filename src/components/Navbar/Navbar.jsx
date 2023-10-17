@@ -1,15 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/addproduct">Add Product</NavLink></li>
+        <li><NavLink to="/cart">My Cart</NavLink></li>
+        <li><NavLink to="/register">Register</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 shadow-md rounded-xl">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,7 +28,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <button className='btn'> <Link to="/login">Login</Link> </button>
   </div>
 </div>
     );
