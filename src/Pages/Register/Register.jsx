@@ -1,19 +1,56 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import { AuthContext } from '../../components/AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
+  const [error,setError] = useState('')
+  const {createUser,logOut} = useContext(AuthContext)
 
-    const handelRegister = e => {
-      e.preventDefault()
+  const handelRegister = e => {
+    e.preventDefault()
     const form = new FormData(e.currentTarget)
     const name = form.get('name')
     const photo = form.get('photo')
     const email = form.get('email')
     const password = form.get('password')
-    console.log(name,photo,email,password)
-    } 
+    setError('')
+    // console.log(name,photo,email,password)
+    createUser(email,password)
+    .then(result => {
+      logOut()
+      console.log(result.user)
+      updateProfile(result.user,{
+        displayName: name,
+        photoURL: photo
+      })
+      .then(()=>{
+
+      })
+      .catch((error)=>{
+        console.error(error)
+      })
+    })
+    .catch(error => {
+      console.error(error)
+    })
+    if(password.length < 6){
+      setError('please provide 6 characters or longer');
+      return
+    }
+    else if(!/[A-Z]/.test(password)){
+      setError('You should have a uppercase')
+      return
+    }
+    else if(!/[!@#$%^&*()_+{}/[\]:;<>,.?~\\|]/.test(password)){
+      setError('You should have a special character')
+      return
+    }
+    
+    toast('Register Successfully')
+  }
     return (
         <div className=" bg-amber-100-100 mt-3">
         <h3 className='text-center text-4xl font-semibold my-2'>Please Register!!!</h3>
@@ -48,9 +85,9 @@ const Register = () => {
                 <label className="label">
                   
                 </label>
-                {/* {
+                {
                   error && <p className="text-xl text-red-700">{error}</p>
-                } */}
+                }
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-pink-300 text-white">Register</button>
