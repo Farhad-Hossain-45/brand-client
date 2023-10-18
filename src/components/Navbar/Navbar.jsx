@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Logo from '../Logo/Logo';
 
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext);
@@ -18,7 +19,7 @@ const Navbar = () => {
         <li><NavLink to="/register">Register</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100 shadow-md rounded-xl">
+        <div className="navbar bg-gray-200 shadow-md rounded-xl">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -28,7 +29,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <Logo></Logo>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -50,10 +51,10 @@ const Navbar = () => {
     }
 
     {
-      user ? <button onClick={handleLogOut} className='btn rounded-xl bg-pink-100'>Sing Out</button> : 
+      user ? <button onClick={handleLogOut} className='btn rounded-xl bg-gray-100'>Sing Out</button> : 
 
     <Link to="/login">
-      <button className='btn rounded-xl bg-pink-100'>Login</button>
+      <button className='btn rounded-xl bg-gray-100'>Login</button>
       </Link>
     }
   </div>
