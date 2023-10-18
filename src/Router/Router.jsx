@@ -7,11 +7,13 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import AddProduct from '../Pages/AddProduct/AddProduct';
 import MyCart from '../Pages/MyCart/MyCart';
+import Error from '../components/Error/Error';
 
 const Router = createBrowserRouter([
     {
         path: '/',
         element: <Layout></Layout>,
+        errorElement: <Error></Error>,
         children:[
             {
                 path: '/',
