@@ -14,7 +14,7 @@ const Banner = () => {
                 {/* <h1 className="text-pink-300">Life is an event</h1> */}
                 <p className="text-5xl font-bold text-white">FOX TECH
                     <br /> <span className='text-[#F18A20]'>UNLIMITED</span> <br /> </p>
-                    <p className='text-white mt-2 text-xl'>The Right <span className='text-[#F18A20]'>IT</span> Services For Business Success</p>
+                    <p className='text-white mt-2 text-xl'>If You Want Best Tech Gadget <br /> Than You Are In Right Place</p>
                 <button className='text-[#F18A20] btn-outline btn mt-2'>Explore</button>
                 
                 </div>
