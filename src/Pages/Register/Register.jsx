@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../components/AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import Navbar from '../../components/Navbar/Navbar';
 
 const Register = () => {
   const [error,setError] = useState('')
@@ -53,7 +54,9 @@ const Register = () => {
     toast('Register Successfully')
   }
     return (
-        <div className=" bg-amber-100-100 mt-3">
+        <div>
+          <div className='bg-[#1C2C68] shadow-md rounded-md'><Navbar></Navbar></div>
+          <div className=" bg-amber-100-100 mt-3">
         <h3 className='text-center text-4xl font-semibold my-2'>Please Register!!!</h3>
         <div className="hero-content">
           
@@ -91,7 +94,7 @@ const Register = () => {
                 }
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-pink-300 text-white">Register</button>
+                <button className="btn bg-[#1C2C68] text-white">Register</button>
               </div>
             </form>
                 <ToastContainer></ToastContainer>
@@ -100,6 +103,7 @@ const Register = () => {
         </div>
        
       </div>
+        </div>
     );
 };
 

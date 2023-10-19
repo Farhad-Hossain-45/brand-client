@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../components/AuthProvider/AuthProvider';
+import Navbar from '../../components/Navbar/Navbar';
 
 const Login = () => {
   const [error,setError] = useState('')
@@ -57,14 +58,16 @@ const Login = () => {
     
   }
     return (
-        <div className=" mt-3">
+        <div>
+          <div className='bg-[#1C2C68] shadow-md rounded-md'><Navbar></Navbar></div>
+          <div className=" mt-3">
             <h3 className='text-center text-4xl font-semibold my-2'>Please Login!!!</h3>
         <div className="hero-content">
           
           <div className="static card flex-shrink-0 w-full max-w-sm shadow-2xl">
             <div className='flex items-center justify-center mt-5'>
                 <div className='text-2xl mt-3'>
-                    <button onClick={handelGoogleSignIn} className='btn px-14 rounded-lg btn-outline hover:bg-pink-300'><FcGoogle className='text-3xl'></FcGoogle>
+                    <button onClick={handelGoogleSignIn} className='btn px-14 rounded-lg btn-outline hover:bg-[#1B295C]'><FcGoogle className='text-3xl'></FcGoogle>
                     Continue With Google
                     </button>
                 </div>
@@ -94,7 +97,7 @@ const Login = () => {
                 
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-pink-300 text-white">Login</button>
+                <button className="btn bg-[#1B295C] text-white">Login</button>
               </div>
             </form>
                 
@@ -104,6 +107,7 @@ const Login = () => {
         </div>
        
       </div>
+        </div>
     );
 };
 

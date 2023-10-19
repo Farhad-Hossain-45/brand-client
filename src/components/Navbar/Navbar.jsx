@@ -13,13 +13,13 @@ const Navbar = () => {
     .catch()
   }
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/addproduct">Add Product</NavLink></li>
-        <li><NavLink to="/cart">My Cart</NavLink></li>
-        <li><NavLink to="/register">Register</NavLink></li>
+        <li className='lg:text-white'><NavLink to="/">Home</NavLink></li>
+        <li className='lg:text-white'><NavLink to="/addproduct">Add Product</NavLink></li>
+        <li className='lg:text-white'><NavLink to="/cart">My Cart</NavLink></li>
+        <li className='lg:text-white'><NavLink to="/register">Register</NavLink></li>
     </>
     return (
-        <div className="navbar bg-gray-200 shadow-md rounded-xl">
+        <div className="navbar rounded-xl">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
   {
-      user && <p>{user.displayName}</p>
+      user && <p className='text-white'>{user.displayName}</p>
       
     }
 
@@ -51,10 +51,10 @@ const Navbar = () => {
     }
 
     {
-      user ? <button onClick={handleLogOut} className='btn rounded-xl bg-gray-100'>Sing Out</button> : 
+      user ? <button onClick={handleLogOut} className='btn rounded-xl bg-[#1B295C] text-white'>Sing Out</button> : 
 
     <Link to="/login">
-      <button className='btn rounded-xl bg-gray-100'>Login</button>
+      <button className='btn rounded-xl bg-[#1B295C] text-white'>Login</button>
       </Link>
     }
   </div>
