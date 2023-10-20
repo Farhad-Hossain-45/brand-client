@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({card}) => {
     const {id,brand_image,brand_name} = card || {}
     return (
-        <div>
+        <Link to={`/cards/${id}`}>
+          <div>
             <div className="card  bg-base-100 shadow-xl h-[300px] md:w-[370px] w-full">
         <figure className="">
           <img
@@ -20,6 +22,7 @@ const Card = ({card}) => {
         </div>
       </div>
         </div>
+        </Link>
     );
 };
 

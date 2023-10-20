@@ -8,6 +8,7 @@ import Register from '../Pages/Register/Register';
 import AddProduct from '../Pages/AddProduct/AddProduct';
 import MyCart from '../Pages/MyCart/MyCart';
 import Error from '../components/Error/Error';
+import CardDetails from '../components/CardDetails/CardDetails';
 
 const Router = createBrowserRouter([
     {
@@ -35,7 +36,11 @@ const Router = createBrowserRouter([
                 path: '/cart',
                 element: <MyCart></MyCart>
             },
-            
+            {
+                path: '/cards/:id',
+                element: <CardDetails></CardDetails>,
+                loader: ()=>fetch('/data.json')
+            }
         ]
     }
 ])
