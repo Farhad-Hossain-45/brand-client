@@ -15,7 +15,7 @@ const CardDetails = () => {
     },[id,cards]) 
     return (
         <div>
-            <Details card = {card}></Details>
+            <Details card={card}></Details>
         </div>
     );
 };
