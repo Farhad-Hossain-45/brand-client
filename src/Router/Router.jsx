@@ -11,6 +11,7 @@ import Error from '../components/Error/Error';
 import CardDetails from '../components/CardDetails/CardDetails';
 import ProductDetails from '../components/ProductDetails/ProductDetails';
 import PrivetRoute from '../components/PrivetRoute/PrivetRoute';
+import ProductUpdate from '../components/ProductUpdate/ProductUpdate';
 
 const Router = createBrowserRouter([
     {
@@ -51,7 +52,11 @@ const Router = createBrowserRouter([
                 element: <PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
-        
+            {
+                path: '/updateProduct/:id',
+                element: <ProductUpdate></ProductUpdate>,
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+            }
         
         ]
     }
