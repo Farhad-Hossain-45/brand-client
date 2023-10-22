@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Brand from '../Brand/Brand';
+import Slider from '../Slider/Slider';
+
 
 const Details = ({card}) => {
     const {id,brand_name} = card || {}
@@ -28,11 +30,13 @@ const Details = ({card}) => {
         <div>
             <div className='bg-[#1C2C68] shadow-md rounded-md'><Navbar></Navbar></div>
             
-            
-            {
+            <Slider></Slider>
+           <div className='grid md:grid-cols-4 grid-cols-1 gap-5'>
+           {
                 filter.map(product => <Brand key={product._id} product={product}></Brand>)
                 
             }
+           </div>
 
 
         </div>
