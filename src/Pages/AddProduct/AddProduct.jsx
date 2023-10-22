@@ -45,7 +45,7 @@ const AddProduct = () => {
         <div >
             
             <div className='bg-[#1C2C68] shadow-md rounded-md'><Navbar></Navbar></div>
-            {/* <h1>brandData : {brandData.length}</h1> */}
+            
             <div className="bg-[#1C2C68] w-[350px] md:w-[600px] mb-20 p-10 rounded-md flex  mx-auto justify-center mt-10">
             <form onSubmit={handleOnSubmit}>
                 <p className="text-lg font-semibold text-white">Image</p>

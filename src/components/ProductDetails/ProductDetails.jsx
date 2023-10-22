@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Rating } from '@mui/material';
 
 const ProductDetails = () => {
     const detailsProduct = useLoaderData()
@@ -30,9 +31,26 @@ const ProductDetails = () => {
     return (
         <div>
             <div className='bg-[#1C2C68] shadow-md rounded-md'><Navbar></Navbar></div>
-            {/* ekhaner kaj baki (details) */}
-            <h2>{name}</h2>
-            <button onClick={()=>handelAddToCart(_id)} className='btn'>Add To Cart</button>
+            
+            <div className="card card-side bg-base-100 shadow-xl md:flex-row flex-col mt-10">
+  <figure><img src={image} className='w-[350px] h-[400px]' alt="Brand"/></figure>
+  <div className="card-body items-center">
+    <h2 className="card-title">{name}</h2>
+    <p>{description}</p>
+    <p className='text-xl font-semibold'>Price: {price}$</p>
+    <p className='text-xl font-semibold'>Product Rating:</p>
+    <p><Rating name="size-medium" defaultValue={rating} readOnly/> <span className='text-2xl'>({rating})</span></p>
+    <p className='text-xl font-semibold'>Brand Name: {brand}</p>
+
+    <div className="card-actions justify-center">
+    <button onClick={()=>handelAddToCart(_id)} className='btn outline bg-[#1C2C68] text-white'>Add To Cart</button>
+    </div>
+  </div>
+</div>
+    
+    
+    
+            
         </div>
     );
 };

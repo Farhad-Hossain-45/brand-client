@@ -10,6 +10,7 @@ import MyCart from '../Pages/MyCart/MyCart';
 import Error from '../components/Error/Error';
 import CardDetails from '../components/CardDetails/CardDetails';
 import ProductDetails from '../components/ProductDetails/ProductDetails';
+import PrivetRoute from '../components/PrivetRoute/PrivetRoute';
 
 const Router = createBrowserRouter([
     {
@@ -51,7 +52,7 @@ const Router = createBrowserRouter([
             // }
             {
                 path: '/productdetails/:id',
-                element: <ProductDetails></ProductDetails>,
+                element: <PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
         
