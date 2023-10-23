@@ -4,7 +4,7 @@ import logo from '../../assets/logo_image1-removebg-preview.png'
 
 const Logo = () => {
     return (
-        <div className='w-32 h-16 mb-6 lg:ml-8 '>
+        <div className='w-32 h-16 mb-6 lg:ml-8 mr-10 lg:mr-0'>
             <img src={logo} alt="" />
            
         </div>

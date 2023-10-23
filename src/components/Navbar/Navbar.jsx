@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Logo from '../Logo/Logo';
+import DarkMode from '../DarkMode/DarkMode';
 
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext);
@@ -37,6 +38,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+  <p className='text-white'><DarkMode></DarkMode></p>
   {
       user && <p className='text-white'>{user.displayName}</p>
       
@@ -48,6 +50,7 @@ const Navbar = () => {
         <img src={user.photoURL} />
       </div>
     </label>
+    
     }
 
     {
@@ -58,6 +61,7 @@ const Navbar = () => {
       </Link>
     }
   </div>
+  
 </div>
     );
 };
