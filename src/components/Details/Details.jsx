@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Brand from '../Brand/Brand';
 import Slider from '../Slider/Slider';
+import NoData from '../NoData/NoData';
 
 
 const Details = ({card}) => {
@@ -31,12 +32,15 @@ const Details = ({card}) => {
             <div className='bg-[#1C2C68] shadow-md rounded-md'><Navbar></Navbar></div>
             
             <Slider></Slider>
+           {
+                filter.length === 0 ? <NoData></NoData> : 
            <div className='grid md:grid-cols-4 grid-cols-1 gap-5'>
            {
                 filter.map(product => <Brand key={product._id} product={product}></Brand>)
                 
             }
            </div>
+           }
 
 
         </div>

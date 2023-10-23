@@ -28,6 +28,7 @@ const Navbar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         {links}
+        <p className='md:text-white '><DarkMode></DarkMode></p>
       </ul>
     </div>
     <Logo></Logo>
@@ -35,10 +36,11 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       {links}
+      <p className='text-white ml-10'><DarkMode></DarkMode></p>
     </ul>
   </div>
   <div className="navbar-end">
-  <p className='text-white'><DarkMode></DarkMode></p>
+  
   {
       user && <p className='text-white'>{user.displayName}</p>
       

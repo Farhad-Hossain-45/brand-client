@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Cart from '../../components/Cart/Cart';
+import EmptyCart from '../../components/EmptyCart/EmptyCart';
 
 const MyCart = () => {
     const [carts,setCarts] = useState([])
@@ -18,7 +19,12 @@ const MyCart = () => {
             <div className='bg-[#1C2C68] shadow-md rounded-md'><Navbar></Navbar></div>
             
             {
-                carts.map(cart=> <Cart key={cart._id} cart={cart}></Cart>)
+                carts.length === 0 ? <EmptyCart></EmptyCart>: 
+                <div>
+                    {
+                        carts.map(cart=> <Cart key={cart._id} cart={cart} carts={carts} setCarts={setCarts}></Cart>)
+                    }
+                </div>
             }
         </div>
     );

@@ -3,7 +3,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 
-const Cart = ({cart}) => {
+const Cart = ({cart,carts,setCarts}) => {
     const {_id,brand,name,price,image} = cart || {}
     const handelDeleteBtn= (id)=>{
       // console.log(id)
@@ -30,6 +30,8 @@ const Cart = ({cart}) => {
             'Your cart has been deleted.',
             'success'
           )
+            const remaining = carts.filter(cart => cart._id !== id)
+            setCarts(remaining)
             }
           })
         }
