@@ -12,7 +12,7 @@ const Details = ({card}) => {
     const [data,setData] = useState([])
     const [filter,setFilter] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/product')
+        fetch('https://tenth-assignment-server-k8jk1hfsq.vercel.app/product')
         .then(res => res.json())
         .then(data => {
             setData(data)

@@ -34,7 +34,7 @@ const Router = createBrowserRouter([
             {
                 path: '/addproduct',
                 element: <PrivetRoute><AddProduct></AddProduct></PrivetRoute>,
-                loader: ()=>fetch('http://localhost:5000/product')
+                // loader: ()=>fetch('https://tenth-assignment-server-k8jk1hfsq.vercel.app/product')
             },
             {
                 path: '/cart',
@@ -43,19 +43,19 @@ const Router = createBrowserRouter([
             {
                 path: '/cards/:id',
                 element: <CardDetails></CardDetails>,
-                loader: ()=>fetch("http://localhost:5000/brands"),
+                loader: ()=>fetch("https://tenth-assignment-server-k8jk1hfsq.vercel.app/brands"),
                 
             },
             
             {
                 path: '/productdetails/:id',
                 element: <PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://tenth-assignment-server-k8jk1hfsq.vercel.app/product/${params.id}`)
             },
             {
                 path: '/updateProduct/:id',
                 element: <PrivetRoute><ProductUpdate></ProductUpdate></PrivetRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://tenth-assignment-server-k8jk1hfsq.vercel.app/product/${params.id}`)
             }
         
         ]

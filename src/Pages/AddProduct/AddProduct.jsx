@@ -20,7 +20,7 @@ const AddProduct = () => {
         const newBrand = {image,name,brand,type,price,description,rating} 
         console.log(newBrand)
 
-        fetch('http://localhost:5000/brand',{
+        fetch('https://tenth-assignment-server-k8jk1hfsq.vercel.app/brand',{
             method: "POST",
             headers: {
                 'content-type' : 'application/json'
@@ -40,7 +40,7 @@ const AddProduct = () => {
             }
         })
     }
-    const brandData = useLoaderData()
+    // const brandData = useLoaderData()
     return (
         <div >
             

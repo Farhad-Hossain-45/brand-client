@@ -9,5 +9,10 @@
 
 5. User can see product details by clicking on details button.
 
-## Website name:
+Website name:
 Foxtech Technology
+
+
+client live link : https://tenth-assignment-client.web.app
+
+server live link : https://tenth-assignment-server-k8jk1hfsq.vercel.app/
