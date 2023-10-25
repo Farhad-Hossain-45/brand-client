@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 const Cards = () => {
     const [cards,setCards] = useState([])
     useEffect(()=>{
-        fetch('https://tenth-assignment-server-k8jk1hfsq.vercel.app/brands')
+        fetch('https://tenth-assignment-server-800sj5qtn.vercel.app/brands')
         .then(res=> res.json())
         .then(data => setCards(data))
     },[])

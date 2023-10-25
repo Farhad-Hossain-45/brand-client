@@ -7,7 +7,7 @@ import EmptyCart from '../../components/EmptyCart/EmptyCart';
 const MyCart = () => {
     const [carts,setCarts] = useState([])
     useEffect(()=>{
-        fetch('https://tenth-assignment-server-k8jk1hfsq.vercel.app/cart')
+        fetch('https://tenth-assignment-server-800sj5qtn.vercel.app/cart')
         .then(res=>res.json())
         .then(data => {
             setCarts(data)

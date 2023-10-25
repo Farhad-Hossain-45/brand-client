@@ -18,7 +18,7 @@ const ProductDetails = () => {
   // console.log(detailsProduct);
   const addToProduct = { brand, name, price, image, userEmail };
   const handelAddToCart = (id) => {
-    fetch("https://tenth-assignment-server-k8jk1hfsq.vercel.app/cart", {
+    fetch("https://tenth-assignment-server-800sj5qtn.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",

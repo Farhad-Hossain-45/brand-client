@@ -34,7 +34,7 @@ const Router = createBrowserRouter([
             {
                 path: '/addproduct',
                 element: <PrivetRoute><AddProduct></AddProduct></PrivetRoute>,
-                // loader: ()=>fetch('https://tenth-assignment-server-k8jk1hfsq.vercel.app/product')
+                // loader: ()=>fetch('https://tenth-assignment-server-800sj5qtn.vercel.app/product')
             },
             {
                 path: '/cart',
@@ -43,19 +43,19 @@ const Router = createBrowserRouter([
             {
                 path: '/cards/:id',
                 element: <CardDetails></CardDetails>,
-                loader: ()=>fetch("https://tenth-assignment-server-k8jk1hfsq.vercel.app/brands"),
+                loader: ()=>fetch("https://tenth-assignment-server-800sj5qtn.vercel.app/brands"),
                 
             },
             
             {
                 path: '/productdetails/:id',
                 element: <PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
-                loader: ({params}) => fetch(`https://tenth-assignment-server-k8jk1hfsq.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`https://tenth-assignment-server-800sj5qtn.vercel.app/product/${params.id}`)
             },
             {
                 path: '/updateProduct/:id',
                 element: <PrivetRoute><ProductUpdate></ProductUpdate></PrivetRoute>,
-                loader: ({params}) => fetch(`https://tenth-assignment-server-k8jk1hfsq.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`https://tenth-assignment-server-800sj5qtn.vercel.app/product/${params.id}`)
             }
         
         ]
